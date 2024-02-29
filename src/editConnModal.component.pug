@@ -1,0 +1,30 @@
+.modal-body
+    .form-group
+        label 名称
+        input.form-control(
+            type='text', 
+            placeholder="Name",
+            autofocus,
+            [(ngModel)]='qc.name', 
+        )
+
+    .form-group
+        label 跳板机名称
+        input.form-control(
+            type='text', 
+            placeholder="跳板机名称",
+            [(ngModel)]='qc.sshTabName', 
+        )
+
+    .form-group
+        label 服务器标识
+        textarea.form-control(
+            rows=6,
+            style="white-space: pre-line",
+            placeholder="服务器唯一标识",
+            [(ngModel)]='qc.labels', 
+        )
+
+.modal-footer
+    button.btn.btn-outline-primary((click)='save()') 保存
+    button.btn.btn-outline-danger((click)='cancel()') 取消

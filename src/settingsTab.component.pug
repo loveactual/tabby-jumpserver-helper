@@ -1,0 +1,21 @@
+h3.mb-3 JUMP HELPER 
+
+<div>
+    .form-group
+        button.btn.btn-outline-primary((click)='createQc()')
+            div.fa.fa-fw.fa-add
+            span.ml-2 添加配置
+
+    <div *ngFor='let qc of qcs'>
+        <div>名称： {{qc.name}}</div>
+        <div>堡垒机： {{qc.sshTabName}}</div>
+        <textarea rows="6" readonly >{{qc.labels}}</textarea>
+        button.btn.btn-outline-info.ml-2((click)='launchQc(qc)')
+            i.fa.fa-play 
+        button.btn.btn-outline-info.ml-2((click)='editQc(qc)')
+            i.fa.fa-pencil
+        button.btn.btn-outline-danger.ml-1((click)='deleteQc(qc)')
+            i.fa.fa-trash-can 
+        <br><br>
+    </div>
+</div>
